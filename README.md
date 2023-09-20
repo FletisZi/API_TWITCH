@@ -4,15 +4,11 @@
 
 # API_TWITCH 🤖
 Meu repositório de criação, teste API TWITCH
+<h1 align="center" >
+    <img src='./path/public/gif.gif'>
+</h1>
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
-
-# Índice 
-
-* [Sobre](#Sobre)
-* [Ferramentas](#Ferramentas)
-* [Índice](#índice)
-
 
 
 ## 📖 Sobre
@@ -33,9 +29,9 @@ No projeto **API_TWICTH** foi pensado para seja algo simples e util, trazendo in
 
 NESTE PROJETO PRINCIPAIS CONHECIMENTOS ADQUIRIDOS:
 
-- CONSULMO DE API EXTERNAS LINK ****
+- CONSULMO DE API EXTERNAS
 
-- HTTP - HEADER E BODY
+- HTTP - (HEADER E BODY)
 
 - ACESS TOKEN AUTHO 2.0
 
@@ -50,3 +46,35 @@ NESTE PROJETO PRINCIPAIS CONHECIMENTOS ADQUIRIDOS:
 - CREATE SERVER
 
 - ROUTES (EXPRESS)
+
+## Iniciando Projeto
+
+❎ Oque é necessario par iniciarmos?
+----
+- Editor de texto de sua preferencia;
+- Instalado Node.js em sua maquina;
+
+
+Com tudo pronto podemos começar...
+
+```bash
+    #Clone repository
+    $ git clone "https://github.com/FletisZi/API_TWITCH.git"
+```
+```bash
+    #Install dependencies
+    $ npm install
+```
+```bash
+    #Start server
+    $ npm start
+```
+
+---
+
+Você pode notar que irá iniciar servidor local na porta "**:8080**". Você pode estar acessando seu navegador com http://localhost:8080/
+
+
+<h1 align="center" >
+    <img src='./path/public/npm_start.gif'>
+</h1>
