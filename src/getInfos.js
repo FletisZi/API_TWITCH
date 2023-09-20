@@ -1,4 +1,4 @@
-import { getAllFollowed,getImgUsers,getIDUser } from "../api/apiGet.js";
+import { getAllFollowed,getImgUsers,getIDUser } from "./apiGet.js";
 
 // recupera o token de acesso que foi guardado local storage;
 
@@ -39,38 +39,40 @@ function createElm(text,link,imgURL){
 }
 
 
+
+
+
 // buscar id do usuario logado com conta twitch
 
-getIDUser(myInit).then(data=>{
+getIDUser(myInit)
+    .then( data =>{
 
-    const idUser = data.data[0].id;
+        const idUser = data.id;
 
-    //ira verificar todos os canais que o usuario assinou
+        //ira verificar todos os canais que o usuario assinou
+        
+        getAllFollowed( idUser, myInit ).then( (data) => {
 
+            data.map((data, index)=>{
 
-    getAllFollowed( idUser, myInit ).then( (data) => {
+                if(index < 20){
 
-        data.data.map((data, index)=>{
-
-            if(index<20){
-
-                const nameLogin = data.broadcaster_login;
-
-                
-                //busca as imagem de todos os canais que o usuario assinou
-
-                const prmisseImg = getImgUsers( nameLogin, myInit);
-
-                prmisseImg.then((dataProfile)=>{
+                    const nameLogin = data.broadcaster_login;
                     
-                    createElm(nameLogin, `https://www.twitch.tv/${nameLogin}`, dataProfile.data[0].profile_image_url)
-                })
+                    //busca as imagem de todos os canais que o usuario assinou
 
-                
-            }
+                    const prmisseImg = getImgUsers( nameLogin, myInit);
 
+                    prmisseImg.then((dataProfile)=>{
+                        
+                        createElm(nameLogin, `https://www.twitch.tv/${nameLogin}`, dataProfile.data[0].profile_image_url)
+                    })
+
+                    
+                }
+
+            })
         })
-    })
 }
 
 )
